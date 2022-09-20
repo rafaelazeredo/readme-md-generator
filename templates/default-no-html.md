@@ -80,5 +80,5 @@
 ##  Authors
 
 <% project.team.members.forEach(function(memberName) { -%>
-👤 **<%= memberName %>**</br>
+👤 **<%= memberName %>**
 <% }) -%>
