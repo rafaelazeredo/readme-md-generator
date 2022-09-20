@@ -18,8 +18,6 @@
 | API Docs      |                                                                                                                        |
 | Documentation |                                                                                                                        |
 
-<p>
-
 ## Table of contents
 
 - Overview
@@ -31,7 +29,6 @@
 - Contributing
 - Authors
 
-</p>
 
 ## Overview
 
