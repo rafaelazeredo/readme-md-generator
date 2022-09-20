@@ -1,5 +1,5 @@
 {
-  "name": "readme-md-generator-json-based",
+  "name": "@rafaelazeredo/readme-md-generator-json-based",
   "project": {
     "name": "Readme MD generator Json based",
     "overview": "Project description",
