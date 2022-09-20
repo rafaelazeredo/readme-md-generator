@@ -106,6 +106,7 @@
     "npm": ">=5.5.0",
     "node": ">=9.3.0"
   },
+  "repository": "git://github.com/rafaelazeredo/readme-md-generator.git",
   "publishConfig": {
     "@rafaelazeredo:registry": "https://npm.pkg.github.com"
   }
