@@ -2,7 +2,6 @@ const readme = require('./readme')
 const infos = require('./project-info')
 const utils = require('./utils')
 
-
 /**
  * Main process:
  * 1) Get README template path
@@ -20,7 +19,7 @@ module.exports = async ({ customTemplatePath, useDefaultAnswers }) => {
   const projectInformation = await infos.getProjectInfo()
 
   const readmeContent = await readme.buildReadmeContent(
-      projectInformation,
+    projectInformation,
     templatePath
   )
 

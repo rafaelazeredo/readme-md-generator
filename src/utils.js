@@ -7,7 +7,6 @@ const fs = require('fs')
 const END_MSG = `README.md was successfully generated.
 Thanks for using readme-md-generator!`
 
-
 const BOXEN_CONFIG = {
   padding: 1,
   margin: { top: 2, bottom: 3 },

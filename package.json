@@ -1,6 +1,6 @@
 {
   "name": "readme-md-generator-json-based",
-  "project" : {
+  "project": {
     "name": "Readme MD generator Json based",
     "overview": "Project description",
     "version": "2.1.1",
@@ -19,13 +19,20 @@
       "prerequisites": {
         "description": "This are the required components required to start and run this service",
         "dependencies": [
-          {"Java": "11"},
-          {"Postgres": "11"},
-          {"Pubsub-emulator": null},
-          {"docker-compose": null}
+          {
+            "Java": "11"
+          },
+          {
+            "Postgres": "11"
+          },
+          {
+            "Pubsub-emulator": null
+          },
+          {
+            "docker-compose": null
+          }
         ]
       },
-
       "setup": {
         "description": "These is the step required to start and Run this service locally",
         "command": "mvn clean isntall spring-boot:run -Dspring-boot.run.profiles=local"

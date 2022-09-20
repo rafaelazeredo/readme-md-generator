@@ -14,8 +14,7 @@ const {
   writeReadme,
   buildReadmeContent,
   README_PATH,
-  getReadmeTemplatePath,
-  checkOverwriteReadme
+  getReadmeTemplatePath
 } = require('./readme')
 
 describe('readme', () => {
