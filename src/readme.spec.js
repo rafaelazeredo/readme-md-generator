@@ -76,37 +76,65 @@ describe('readme', () => {
 
   describe('buildReadmeContent', () => {
     const context = {
-      isGithubRepos: true,
-      repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
-      projectPrerequisites: [
-        { name: 'npm', value: '>=5.5.0' },
-        { name: 'node', value: '>= 9.3.0' }
-      ],
-      projectName: 'readme-md-generator',
-      projectVersion: '0.1.3',
-      projectDescription:
-        'Generates beautiful README files from git config & package.json infos',
-      projectDocumentationUrl:
-        'https://github.com/kefranabg/readme-md-generator#readme',
-      projectHomepage:
-        'https://github.com/kefranabg/readme-md-generator#readme',
-      projectDemoUrl: 'https://github.com/kefranabg/readme-md-generator#-demo',
-      authorName: 'Franck Abgrall',
-      authorWebsite: 'https://www.franck-abgrall.me/',
-      authorGithubUsername: 'kefranabg',
-      authorTwitterUsername: 'FranckAbgrall',
-      authorLinkedInUsername: 'franckabgrall',
-      authorPatreonUsername: 'FranckAbgrall',
-      licenseName: 'MIT',
-      licenseUrl:
-        'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
-      issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
-      contributingUrl:
-        'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-      installCommand: 'npm install',
-      usage: 'npm start',
-      testCommand: 'npm run test',
-      isProjectOnNpm: true
+      project: {
+        name: 'Readme MD generator Json based',
+        overview: 'Project description',
+        version: '2.1.1',
+        repository: {
+          link: 'https://gogole.com.br',
+          deployment: 'https://gogole.com.br'
+        },
+        badges: [
+          {
+            name: 'badge',
+            type: 'google',
+            link: 'https://gogole.com.br'
+          }
+        ],
+        gettingStarted: {
+          prerequisites: {
+            description: 'This are the required components required to start and run this service',
+            dependencies: [
+              {
+                Java: '11'
+              },
+              {
+                Postgres: '11'
+              },
+              {
+                'Pubsub-emulator': null
+              },
+              {
+                'docker-compose': null
+              }
+            ]
+          },
+          setup: {
+            description: 'These is the step required to start and Run this service locally',
+            command: 'mvn clean isntall spring-boot:run -Dspring-boot.run.profiles=local'
+          },
+          test: {
+            description: 'This are the steps to run tests.',
+            command: 'mvn clean install verify'
+          },
+          usage: {
+            description: 'Use the Open API specification',
+            command: 'N/A'
+          }
+        },
+        contributing: {
+          description: 'We welcome contributions to our code. These are the steps to contribute here: </br> 1 - Documentation regarding the change </br> 2 - Design meeting with the team </br> 3 - Create a PR'
+        },
+        team: {
+          name: 'Team Name',
+          contact: 'ask--team--name',
+          link: 'https://slack-channel-link',
+          homePage: '',
+          members: [
+            'Rafa Azeredo'
+          ]
+        }
+      }
     }
 
     afterEach(() => {
@@ -213,4 +241,3 @@ describe('readme', () => {
 
 jest.mock('ora')
 jest.mock('./choose-template')
-jest.mock('./ask-overwrite')

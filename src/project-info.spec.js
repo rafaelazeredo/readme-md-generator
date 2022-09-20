@@ -44,15 +44,23 @@ describe('projectInfos', () => {
         version: '0.1.3',
         description: 'CLI that generates beautiful README.md files.',
         author: 'Franck Abgrall',
-        license: 'MIT',
         homepage: 'https://github.com/kefranabg/readme-md-generator',
-        repository: {
-          type: 'git',
-          url: 'git+https://github.com/kefranabg/readme-md-generator.git'
-        },
         bugs: {
           url: 'https://github.com/kefranabg/readme-md-generator/issues'
         },
+        packageManager: 'yarn',
+        repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
+        authorWebsite: 'https://www.franck-abgrall.me/',
+        contributingUrl: 'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
+        documentationUrl: 'https://github.com/kefranabg/readme-md-generator#readme',
+        githubUsername: 'kefranabg',
+        isGithubRepos: true,
+        isJSProject: true,
+        issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
+        licenseName: 'MIT',
+        licenseUrl: 'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
+        hasTestCommand: false,
+        hasStartCommand: false,
         engines: {
           npm: '>=5.5.0',
           node: '>=9.3.0'
@@ -72,6 +80,9 @@ describe('projectInfos', () => {
         author: 'Franck Abgrall',
         repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
         homepage: 'https://github.com/kefranabg/readme-md-generator',
+        bugs: {
+          url: 'https://github.com/kefranabg/readme-md-generator/issues'
+        },
         contributingUrl:
           'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
         authorWebsite: 'https://www.franck-abgrall.me/',

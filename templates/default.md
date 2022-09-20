@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to <%= project.ben %> 👋</h1>
+<h1 align="center">Welcome to <%= project.name %> 👋</h1>
 
 
 <% project.badges.map(({ name, type, badge, link }) => { -%>
