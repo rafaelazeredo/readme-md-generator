@@ -114,7 +114,7 @@ describe('readme', () => {
             description:
               'These is the step required to start and Run this service locally',
             command:
-              'mvn clean isntall spring-boot:run -Dspring-boot.run.profiles=local'
+              'mvn clean install spring-boot:run -Dspring-boot.run.profiles=local'
           },
           test: {
             description: 'This are the steps to run tests.',

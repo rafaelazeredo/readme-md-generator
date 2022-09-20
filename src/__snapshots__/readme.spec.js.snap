@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`readme buildReadmeContent should return readme default template content 1`] = `
+"<h1 align=\\"center\\">Welcome to Readme MD generator Json based 👋</h1>
+
+
+ [<img src=\\"https://img.shields.io/badge/google-badge-brightgreen.svg\\">](https://gogole.com.br)
+
+
+
+|               |                                                                                                                          |
+|---------------|--------------------------------------------------------------------------------------------------------------------------|
+| Team          | 👤👤  **Team Name**                                                                                       |
+| Support       | [<img src=\\"https://img.shields.io/badge/slack-%23ask--team--name-brightgreen.svg\\">](https://slack-channel-link) |
+| Repository    | [Service Repository](https://gogole.com.br)                                                                     |
+| Deployment    | [Deployment Repository](https://gogole.com.br)                                                            | 
+| Runbook       | []                                                                                                                       |   
+| API Docs      |                                                                                                                          |
+| Documentation |                                                                                                                          |
+
+<p>
+
+## Table of contents
+
+- Overview
+- Getting Started
+  - Pre requisites
+  - How wo Start and Run in 5 minutes
+  - How to Test
+  - How to use
+- Contributing
+- Authors
+
+</p>
+
+## Overview
+
+Project description
+
+
+## Getting Started
+
+### Prerequisites
+
+This are the required components required to start and run this service
+
+
+
+- Java 11
+
+- Postgres 11
+
+- Pubsub-emulator 
+
+- docker-compose 
+
+
+
+### How to start and run in 5 minutes
+
+These is the step required to start and Run this service locally
+
+\`\`\`
+mvn clean install spring-boot:run -Dspring-boot.run.profiles=local
+\`\`\`
+
+## How to test
+
+This are the steps to run tests.
+
+\`\`\`
+mvn clean install verify
+\`\`\`
+
+## How to use
+
+Use the Open API specification
+
+## 🤝 Contributing
+
+We welcome contributions to our code. These are the steps to contribute here: &lt;/br&gt; 1 - Documentation regarding the change &lt;/br&gt; 2 - Design meeting with the team &lt;/br&gt; 3 - Create a PR
+
+
+##  Authors
+
+👤 **Rafa Azeredo**</br>
+"
+`;
+
+exports[`readme buildReadmeContent should return readme default template no html content 1`] = `
+"# Welcome to Readme MD generator Json based 👋
+
+
+
+ [https://img.shields.io/badge/google-badge-brightgreen.svg](https://gogole.com.br)
+
+
+
+|               |                                                                                                                        |
+|---------------|------------------------------------------------------------------------------------------------------------------------|
+| Team          | 👤👤  **Team Name**                                                                                     |
+| Support       | [https://img.shields.io/badge/slack-%23ask--team--name-brightgreen.svg](https://slack-channel-link) |
+| Repository    | [Service Repository](https://gogole.com.br)                                                                   |
+| Deployment    | [Deployment Repository](https://gogole.com.br)                                                          | 
+| Runbook       | []                                                                                                                     |   
+| API Docs      |                                                                                                                        |
+| Documentation |                                                                                                                        |
+
+## Table of contents
+
+- Overview
+- Getting Started
+    - Pre requisites
+    - How wo Start and Run in 5 minutes
+    - How to Test
+    - How to use
+- Contributing
+- Authors
+
+
+## Overview
+
+Project description
+
+
+## Getting Started
+
+### Prerequisites
+
+This are the required components required to start and run this service
+
+
+
+- Java 11
+  
+  - Postgres 11
+  
+  - Pubsub-emulator 
+  
+  - docker-compose 
+  
+  
+
+### How to start and run in 5 minutes
+
+These is the step required to start and Run this service locally
+
+\`\`\`
+mvn clean install spring-boot:run -Dspring-boot.run.profiles=local
+\`\`\`
+
+## How to test
+
+This are the steps to run tests.
+
+\`\`\`
+mvn clean install verify
+\`\`\`
+
+## How to use
+
+Use the Open API specification
+
+## 🤝 Contributing
+
+We welcome contributions to our code. These are the steps to contribute here: &lt;/br&gt; 1 - Documentation regarding the change &lt;/br&gt; 2 - Design meeting with the team &lt;/br&gt; 3 - Create a PR
+
+
+##  Authors
+
+👤 **Rafa Azeredo**
+"
+`;
