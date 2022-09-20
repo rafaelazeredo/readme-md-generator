@@ -93,7 +93,8 @@ describe('readme', () => {
         ],
         gettingStarted: {
           prerequisites: {
-            description: 'This are the required components required to start and run this service',
+            description:
+              'This are the required components required to start and run this service',
             dependencies: [
               {
                 Java: '11'
@@ -110,8 +111,10 @@ describe('readme', () => {
             ]
           },
           setup: {
-            description: 'These is the step required to start and Run this service locally',
-            command: 'mvn clean isntall spring-boot:run -Dspring-boot.run.profiles=local'
+            description:
+              'These is the step required to start and Run this service locally',
+            command:
+              'mvn clean isntall spring-boot:run -Dspring-boot.run.profiles=local'
           },
           test: {
             description: 'This are the steps to run tests.',
@@ -123,16 +126,15 @@ describe('readme', () => {
           }
         },
         contributing: {
-          description: 'We welcome contributions to our code. These are the steps to contribute here: </br> 1 - Documentation regarding the change </br> 2 - Design meeting with the team </br> 3 - Create a PR'
+          description:
+            'We welcome contributions to our code. These are the steps to contribute here: </br> 1 - Documentation regarding the change </br> 2 - Design meeting with the team </br> 3 - Create a PR'
         },
         team: {
           name: 'Team Name',
           contact: 'ask--team--name',
           link: 'https://slack-channel-link',
           homePage: '',
-          members: [
-            'Rafa Azeredo'
-          ]
+          members: ['Rafa Azeredo']
         }
       }
     }

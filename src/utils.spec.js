@@ -2,9 +2,7 @@ const loadJsonFile = require('load-json-file')
 const boxen = require('boxen')
 const path = require('path')
 const getReposName = require('git-repo-name')
-const fetch = require('node-fetch')
 const fs = require('fs')
-const { isNil } = require('lodash')
 
 const realPathBasename = path.basename
 const realGetReposNameSync = getReposName.sync
@@ -15,11 +13,6 @@ const {
   getProjectName,
   END_MSG,
   BOXEN_CONFIG,
-  getDefaultAnswer,
-  getDefaultAnswers,
-  cleanSocialNetworkUsername,
-  isProjectAvailableOnNpm,
-  getAuthorWebsiteFromGithubAPI,
   doesFileExist,
   getPackageManagerFromLockFile
 } = require('./utils')
@@ -120,152 +113,6 @@ describe('utils', () => {
       expect(result).toEqual(projectName)
       expect(getReposName.sync).toHaveBeenCalled()
       expect(path.basename).toHaveBeenCalled()
-    })
-  })
-
-  describe('getDefaultAnswer', () => {
-    it('should handle input prompts correctly', async () => {
-      const question = { type: 'input', default: 'default' }
-      const result = await getDefaultAnswer(question)
-      expect(result).toEqual(question.default)
-    })
-
-    it('should handle choices prompts correctly', async () => {
-      const value = { name: 'name', value: 'value' }
-      const question = {
-        type: 'checkbox',
-        choices: [{ value, checked: true }, { checked: false }]
-      }
-      const result = await getDefaultAnswer(question)
-
-      expect(result).toEqual([value])
-    })
-
-    it('should return empty string for non-defaulted fields', async () => {
-      const question = { type: 'input' }
-      const result = await getDefaultAnswer(question)
-
-      expect(result).toEqual('')
-    })
-
-    it('should return undefined for invalid types', async () => {
-      const question = { type: 'invalid' }
-      const result = await getDefaultAnswer(question)
-
-      expect(result).toEqual(undefined)
-    })
-
-    it('should return undefined if when function is defined and return false', async () => {
-      const answersContext = {}
-      const question = {
-        type: 'input',
-        when: ansewersContext => !isNil(ansewersContext.licenseUrl)
-      }
-
-      const result = await getDefaultAnswer(question, answersContext)
-
-      expect(result).toEqual(undefined)
-    })
-
-    describe('isProjectAvailableOnNpm', () => {
-      it('should return true if project is available on npm', () => {
-        const result = isProjectAvailableOnNpm('readme-md-generator')
-
-        expect(result).toBe(true)
-      })
-
-      it('should return false if project is not available on npm', () => {
-        const result = isProjectAvailableOnNpm('bento-starter')
-
-        expect(result).toBe(false)
-      })
-    })
-
-    it('should return correct value if when function is defined and return true', async () => {
-      const answersContext = { licenseUrl: 'licenseUrl' }
-      const question = {
-        type: 'input',
-        default: 'default',
-        when: ansewersContext => !isNil(ansewersContext.licenseUrl)
-      }
-
-      const result = await getDefaultAnswer(question, answersContext)
-
-      expect(result).toEqual('default')
-    })
-  })
-
-  describe('getDefaultAnswers', () => {
-    it('should return default answers from questions', async () => {
-      const questions = [
-        {
-          type: 'input',
-          name: 'questionOne',
-          default: 'answer 1'
-        },
-        {
-          type: 'input',
-          name: 'questionTwo',
-          default: 'answer 2'
-        }
-      ]
-
-      const result = await getDefaultAnswers(questions)
-
-      expect(result).toEqual({
-        questionOne: 'answer 1',
-        questionTwo: 'answer 2'
-      })
-    })
-  })
-
-  describe('cleanSocialNetworkUsername', () => {
-    it('should remove prefixed @', () => {
-      expect(cleanSocialNetworkUsername('@Slashgear')).toEqual('Slashgear')
-    })
-
-    it('should escape markdown characters', () => {
-      expect(cleanSocialNetworkUsername('Slashgear__')).toEqual(
-        'Slashgear\\_\\_'
-      )
-      expect(cleanSocialNetworkUsername('Slashgear**')).toEqual(
-        'Slashgear\\*\\*'
-      )
-    })
-
-    it('should return the same string when string is not prefixed or contains markdown chars', () => {
-      expect(cleanSocialNetworkUsername('Slashgear')).toEqual('Slashgear')
-    })
-  })
-
-  describe('getAuthorWebsiteFromGithubAPI', () => {
-    it('should return author website url when it exists', async () => {
-      const expectedAuthorWebsite = 'https://www.franck-abgrall.me/'
-      fetch.mockReturnValueOnce(
-        Promise.resolve({
-          json: () => Promise.resolve({ blog: expectedAuthorWebsite })
-        })
-      )
-
-      const githubUsername = 'kefranabg'
-      const authorWebsite = await getAuthorWebsiteFromGithubAPI(githubUsername)
-      expect(authorWebsite).toEqual(expectedAuthorWebsite)
-    })
-
-    it('should return undefined if author website url does not exist', async () => {
-      fetch.mockReturnValueOnce(Promise.resolve({ blog: '' }))
-      const githubUsername = 'kefranabg'
-      const authorWebsite = await getAuthorWebsiteFromGithubAPI(githubUsername)
-      expect(authorWebsite).toEqual(undefined)
-    })
-
-    it('should return undefined if there is an error', async () => {
-      fetch.mockImplementationOnce(() => {
-        throw new Error('ERROR')
-      })
-      const githubUsername = 'kefranabg'
-      const authorWebsite = await getAuthorWebsiteFromGithubAPI(githubUsername)
-      expect(authorWebsite).toEqual(undefined)
     })
   })
 

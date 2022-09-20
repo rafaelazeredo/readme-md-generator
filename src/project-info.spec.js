@@ -51,14 +51,17 @@ describe('projectInfos', () => {
         packageManager: 'yarn',
         repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
         authorWebsite: 'https://www.franck-abgrall.me/',
-        contributingUrl: 'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-        documentationUrl: 'https://github.com/kefranabg/readme-md-generator#readme',
+        contributingUrl:
+          'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
+        documentationUrl:
+          'https://github.com/kefranabg/readme-md-generator#readme',
         githubUsername: 'kefranabg',
         isGithubRepos: true,
         isJSProject: true,
         issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
         licenseName: 'MIT',
-        licenseUrl: 'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
+        licenseUrl:
+          'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
         hasTestCommand: false,
         hasStartCommand: false,
         engines: {
@@ -134,28 +137,22 @@ describe('projectInfos', () => {
 
       expect(projectInfos).toEqual({
         name: 'readme-md-generator',
-        description: 'CLI that generates beautiful README.md files.',
         version: '0.1.3',
+        description: 'CLI that generates beautiful README.md files.',
         author: 'Franck Abgrall',
-        repositoryUrl: 'https://gitlab.com/kefranabg/readme-md-generator',
-        contributingUrl:
-          'https://gitlab.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
+        license: 'MIT',
         homepage: 'https://gitlab.com/kefranabg/readme-md-generator',
-        githubUsername: undefined,
-        authorWebsite: undefined,
+        repository: {
+          type: 'git',
+          url: 'git+https://gitlab.com/kefranabg/readme-md-generator.git'
+        },
+        bugs: {
+          url: 'https://gitlab.com/kefranabg/readme-md-generator/issues'
+        },
         engines: {
           npm: '>=5.5.0',
           node: '>=9.3.0'
-        },
-        licenseName: 'MIT',
-        licenseUrl: undefined,
-        documentationUrl: undefined,
-        isGithubRepos: false,
-        isJSProject: true,
-        issuesUrl: 'https://gitlab.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: false,
-        hasTestCommand: false,
-        packageManager: 'yarn'
+        }
       })
     })
 
@@ -167,29 +164,7 @@ describe('projectInfos', () => {
 
       const projectInfos = await getProjectInfo()
 
-      expect(projectInfos).toEqual({
-        name: 'readme-md-generator',
-        description: undefined,
-        version: undefined,
-        author: undefined,
-        repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
-        contributingUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-        homepage: undefined,
-        githubUsername: 'kefranabg',
-        authorWebsite: 'https://www.franck-abgrall.me/',
-        engines: undefined,
-        licenseName: undefined,
-        licenseUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
-        documentationUrl:
-          'https://github.com/kefranabg/readme-md-generator#readme',
-        isGithubRepos: true,
-        isJSProject: false,
-        issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: false,
-        hasTestCommand: false
-      })
+      expect(projectInfos).toEqual(undefined)
     })
 
     it('should return correct infos when repos is not github and package.json are not defined', async () => {
@@ -200,27 +175,7 @@ describe('projectInfos', () => {
 
       const projectInfos = await getProjectInfo()
 
-      expect(projectInfos).toEqual({
-        name: 'readme-md-generator',
-        description: undefined,
-        version: undefined,
-        author: undefined,
-        repositoryUrl: 'https://gitlab.com/kefranabg/readme-md-generator',
-        authorWebsite: undefined,
-        contributingUrl:
-          'https://gitlab.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-        homepage: undefined,
-        githubUsername: undefined,
-        engines: undefined,
-        licenseName: undefined,
-        licenseUrl: undefined,
-        documentationUrl: undefined,
-        isGithubRepos: false,
-        isJSProject: false,
-        issuesUrl: 'https://gitlab.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: false,
-        hasTestCommand: false
-      })
+      expect(projectInfos).toEqual(undefined)
     })
 
     it('should return correct infos when git config and package.json are not defined', async () => {
@@ -231,26 +186,7 @@ describe('projectInfos', () => {
 
       const projectInfos = await getProjectInfo()
 
-      expect(projectInfos).toEqual({
-        name: 'readme-md-generator',
-        description: undefined,
-        version: undefined,
-        author: undefined,
-        repositoryUrl: undefined,
-        contributingUrl: undefined,
-        homepage: undefined,
-        authorWebsite: undefined,
-        githubUsername: undefined,
-        engines: undefined,
-        licenseName: undefined,
-        licenseUrl: undefined,
-        documentationUrl: undefined,
-        isGithubRepos: false,
-        isJSProject: false,
-        testCommand: undefined,
-        hasStartCommand: false,
-        hasTestCommand: false
-      })
+      expect(projectInfos).toEqual(undefined)
     })
 
     it('should return correct infos when git config is not defined', async () => {
@@ -282,30 +218,22 @@ describe('projectInfos', () => {
 
       expect(projectInfos).toEqual({
         name: 'readme-md-generator',
-        description: 'CLI that generates beautiful README.md files.',
         version: '0.1.3',
+        description: 'CLI that generates beautiful README.md files.',
         author: 'Franck Abgrall',
-        repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
-        contributingUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
+        license: 'MIT',
         homepage: 'https://github.com/kefranabg/readme-md-generator',
-        githubUsername: 'kefranabg',
-        authorWebsite: 'https://www.franck-abgrall.me/',
+        repository: {
+          type: 'git',
+          url: 'git+https://github.com/kefranabg/readme-md-generator.git'
+        },
+        bugs: {
+          url: 'https://github.com/kefranabg/readme-md-generator/issues'
+        },
         engines: {
           npm: '>=5.5.0',
           node: '>=9.3.0'
-        },
-        licenseName: 'MIT',
-        licenseUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
-        documentationUrl:
-          'https://github.com/kefranabg/readme-md-generator#readme',
-        isGithubRepos: true,
-        isJSProject: true,
-        issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: false,
-        hasTestCommand: false,
-        packageManager: 'yarn'
+        }
       })
     })
 
@@ -342,30 +270,26 @@ describe('projectInfos', () => {
 
       expect(projectInfos).toEqual({
         name: 'readme-md-generator',
-        description: 'CLI that generates beautiful README.md files.',
         version: '0.1.3',
-        author: 'Franck Abgrall',
-        repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
+        description: 'CLI that generates beautiful README.md files.',
+        author: {
+          name: 'Franck Abgrall',
+          email: 'abgrallkefran@gmail.com',
+          url: ''
+        },
+        license: 'MIT',
         homepage: 'https://github.com/kefranabg/readme-md-generator',
-        contributingUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-        githubUsername: 'kefranabg',
-        authorWebsite: 'https://www.franck-abgrall.me/',
+        repository: {
+          type: 'git',
+          url: 'git+https://github.com/kefranabg/readme-md-generator.git'
+        },
+        bugs: {
+          url: 'https://github.com/kefranabg/readme-md-generator/issues'
+        },
         engines: {
           npm: '>=5.5.0',
           node: '>=9.3.0'
-        },
-        licenseName: 'MIT',
-        licenseUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
-        documentationUrl:
-          'https://github.com/kefranabg/readme-md-generator#readme',
-        isGithubRepos: true,
-        isJSProject: true,
-        issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: false,
-        hasTestCommand: false,
-        packageManager: 'yarn'
+        }
       })
     })
 
@@ -403,30 +327,26 @@ describe('projectInfos', () => {
 
       expect(projectInfos).toEqual({
         name: 'readme-md-generator',
-        description: 'CLI that generates beautiful README.md files.',
         version: '0.1.3',
+        description: 'CLI that generates beautiful README.md files.',
         author: 'Franck Abgrall',
-        repositoryUrl: 'https://github.com/kefranabg/readme-md-generator',
+        license: 'MIT',
         homepage: 'https://github.com/kefranabg/readme-md-generator',
-        contributingUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md',
-        authorWebsite: 'https://www.franck-abgrall.me/',
-        githubUsername: 'kefranabg',
+        repository: {
+          type: 'git',
+          url: 'git+https://github.com/kefranabg/readme-md-generator.git'
+        },
+        bugs: {
+          url: 'https://github.com/kefranabg/readme-md-generator/issues'
+        },
         engines: {
           npm: '>=5.5.0',
           node: '>=9.3.0'
         },
-        licenseName: 'MIT',
-        licenseUrl:
-          'https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE',
-        documentationUrl:
-          'https://github.com/kefranabg/readme-md-generator#readme',
-        isGithubRepos: true,
-        isJSProject: true,
-        issuesUrl: 'https://github.com/kefranabg/readme-md-generator/issues',
-        hasStartCommand: true,
-        hasTestCommand: true,
-        packageManager: 'yarn'
+        scripts: {
+          start: 'node src/index.js',
+          test: 'jest'
+        }
       })
     })
   })

@@ -13,13 +13,11 @@ inquirer.prompt = jest.fn(items =>
   )
 )
 
-
 jest.mock('./clean-context', () =>
   jest.fn(() => ({ projectName: 'readme-md-generator-after-context-clean' }))
 )
 
 describe('mainProcess', () => {
-
   it('should call main functions with correct args', async () => {
     const customTemplatePath = undefined
     const useDefaultAnswers = true
